@@ -41,7 +41,7 @@ app.get('/logout', (req, res) => {
   res.redirect('/')
 })
 
-db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync().then(() => {
   const PORT = process.env.PORT || 3000
   app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`))
 })
